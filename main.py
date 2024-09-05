@@ -1,4 +1,3 @@
-import pandas as pd
 import glob as gb
 from fpdf import FPDF
 from pathlib import Path
@@ -16,8 +15,10 @@ def create_pdf(filepath, content):
 
     pdf.set_font(family="Times", size=16, style="B")
     pdf.cell(w=50, h=8, txt=header, ln=1)
+
     pdf.set_font(family="Arial", size=12)
-    pdf.multi_cell(w=0, h=5, txt=content, border=0)
+    pdf.ln()
+    pdf.multi_cell(w=0, h=8, txt=content)
 
 
 def create_and_save_pdfs():
